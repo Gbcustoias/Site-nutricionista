@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Nutricionista Custoias</title>
+    <style>
+        /* Adicione seu CSS aqui */
+        .avaliacoes-carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .avaliacao {
+            min-width: 100%;
+            transition: transform 0.5s ease;
+            text-align: center;
+        }
+
+        .avaliacao.active {
+            display: block;
+        }
+
+        .avaliacao:not(.active) {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <img src="img/LOGOTIPO.png" alt="Logo" class="logo">
+            <ul class="ul">
+                <li><a href="index.html" class="nav-link">Início</a></li>
+                <li><a href="Sobre.html" class="nav-link">Sobre</a></li>
+                <li><a href="Atendimento.html" class="nav-link">Atendimento</a></li>
+                <li><a href="Materiais.html" class="nav-link">Materiais</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/Nutricionistacustoias" target="_blank">
+                    <img src="img/insta.png" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://www.linkedin.com/in/giovani-boldrini-custoias" target="_blank">
+                    <img src="img/linkedin.png" alt="LinkedIn" class="social-icon">
+                </a>
+                <a href="https://www.facebook.com/Nutricionistacustoias" target="_blank">
+                    <img src="img/fb.png" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://wa.me/5511994702521?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20do%20atendimento."
+                    target="_blank">
+                    <img src="img/wpp.png" alt="Whatsapp" class="social-icon">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="carousel">
+        <div class="carousel-container">
+            <img src="img/slide1.jpg" alt="Imagem 1" class="carousel-image">
+            <img src="img/slide2.jpg" alt="Imagem 2" class="carousel-image">
+            <img src="img/slide3.jpg" alt="Imagem 3" class="carousel-image">
+        </div>
+    </section>
+
+    <section class="descubra-dynami">
+        <h2>Descubra a Sua Dynami!</h2>
+        <p>Dynami é uma palavra grega que significa "poder" ou "força", e carrega o sentido de uma energia constante e
+            potencialidade. Na Comunidade Dynami, buscamos essa energia e a transformamos em um caminho para seu
+            potencial máximo.</p>
+        <p>Quer fazer parte dessa comunidade, clique no botão e saiba mais!</p>
+        <a href="Atendimento.html" class="btn-comunidade">Conexão Dynami</a>
+    </section>
+
+    <section class="Especialidades">
+        <div class="Especialidades-text">
+            <h2>Especialidades atendidas</h2>
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <video class="video" muted preload="auto">
+                        <source src="img/Esportiva.mp4" type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                    <h3 class="video-description">Nutrição Esportiva</h3>
+                    <p>A nutrição esportiva é essencial para otimizar o rendimento e a performance de atletas. Com um
+                        plano alimentar personalizado, garantimos que você receba os nutrientes necessários para
+                        melhorar sua resistência, acelerar a recuperação e maximizar seus treinos. Junte-se a nós para
+                        alcançar suas metas esportivas com saúde!</p>
+                </div>
+                <div class="video-container">
+                    <video class="video" muted preload="auto">
+                        <source src="img/Clinica.mp4" type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                    <h3 class="video-description">Nutrição Clínica</h3>
+                    <p>A nutrição clínica é vital na prevenção e no tratamento de doenças. Um plano alimentar adequado
+                        pode ajudar a controlar condições como diabetes e hipertensão, promovendo saúde e bem-estar.
+                        Estamos aqui para oferecer orientações personalizadas que favorecem sua recuperação e melhoram
+                        sua qualidade de vida.</p>
+                </div>
+                <div class="video-container">
+                    <video class="video" muted preload="auto">
+                        <source src="img/Comportamental.mp4" type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                    <h3 class="video-description">Nutrição Comportamental</h3>
+                    <p>A nutrição comportamental aborda o emagrecimento e o comer compulsivo, promovendo uma relação
+                        saudável com a comida. Ao entender seus hábitos emocionais, desenvolvemos estratégias
+                        personalizadas que ajudam a identificar gatilhos e cultivar comportamentos positivos. Alcançar
+                        seus objetivos de forma sustentável é nossa missão!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="avaliacoes">
+        <h2>Avaliações de Pacientes</h2>
+        <div class="avaliacoes-carousel">
+            <div class="avaliacao active">
+                <p>"Super atencioso, preocupado com você como um ser e não só como um número!!"</p>
+                <p class="paciente">- Jennifer Longo</p>
+                <div class="estrelas">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="avaliacao">
+                <p>"Excelente profissional, dieta sem restrições, consegui emagrecer e me devolveu saúde e disposição!
+                    Agradeço imensamente."</p>
+                <p class="paciente">- Jessica Harumi</p>
+                <div class="estrelas">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="avaliacao">
+                <p>"Ótimo profissional!"</p>
+                <p class="paciente">- Andréia Vasconcelos</p>
+                <div class="estrelas">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="avaliacao">
+                <p>"Ótimo atendimento!"</p>
+                <p class="paciente">- Mari Alvez</p>
+                <div class="estrelas">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="avaliacao">
+                <p>"Muito bom, profissional de respeito e sabe do que fala!"</p>
+                <p class="paciente">- Breno Rogério</p>
+                <div class="estrelas">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="avaliacao">
+                <p>"Muito bom, ótimo atendimento."</p>
+                <p class="paciente">- Astolfo Andrini</p>
+                <div class="estrelas">⭐⭐⭐⭐⭐</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Script especialidades atendidas -->
+    <script>
+        const videoContainers = document.querySelectorAll('.video-container');
+        videoContainers.forEach(container => {
+            const video = container.querySelector('.video');
+            video.load();
+            container.addEventListener('mouseenter', () => {
+                video.play();
+            });
+            container.addEventListener('mouseleave', () => {
+                video.reset();
+                video.currentTime = 0; // Volta para o início
+            });
+        });
+    </script>
+
+    <!-- Script carrossel head -->
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel-image');
+
+        function showNextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            const offset = -currentIndex * 100; // Ajusta a posição para mostrar a próxima imagem
+            document.querySelector('.carousel-container').style.transform = `translateX(${offset}%)`;
+        }
+
+        setInterval(showNextImage, 7000); // Muda a imagem a cada 7 segundos
+    </script>
+
+    <!-- Script carrossel avaliações -->
+    <!-- Script carrossel avaliações -->
+    <script>
+        let avaliacaoIndex = 0;
+        const avaliacoes = document.querySelectorAll('.avaliacao');
+
+        function showNextAvaliacao() {
+            avaliacoes[avaliacaoIndex].classList.remove('active');
+
+            avaliacaoIndex = (avaliacaoIndex + 1) % avaliacoes.length;
+
+            avaliacoes[avaliacaoIndex].classList.add('active');
+        }
+
+        setInterval(showNextAvaliacao, 5000); // Muda a avaliação a cada 5 segundos
+    </script>
+
+
+    <footer>
+        <div class="footer-container">
+            <img src="img/LOGO.png" alt="Logo" class="footer-logo">
+            <div class="footer-info">
+                <p><a
+                        href="https://wa.me/5511994702521?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20do%20atendimento.">Whatsapp:
+                        (11) 99470-2551</a></p>
+                <p><a href="https://mail.google.com/mail/u/2/#inbox?compose=new">Email:
+                        nutricionistacustoias@gmail.com</a></p>
+                <p>Todos os direitos reservados &copy; 2024</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
