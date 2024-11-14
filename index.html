@@ -9,39 +9,31 @@
     <title>Nutricionista Custoias</title>
     <style>
         /* Adicione seu CSS aqui */
-        .avaliacoes-carousel {
-            display: flex;
-            overflow: hidden;
-            width: 100%;
-            position: relative;
-        }
-
-        .avaliacao {
-            min-width: 100%;
-            transition: transform 0.5s ease;
-            text-align: center;
-        }
-
-        .avaliacao.active {
-            display: block;
-        }
-
-        .avaliacao:not(.active) {
-            display: none;
-        }
     </style>
 </head>
 
 <body>
     <header>
         <div class="container">
+            <!-- Logo -->
             <img src="img/LOGOTIPO.png" alt="Logo" class="logo">
+
+            <!-- Ícone do menu hamburguer (aparece apenas em telas pequenas) -->
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <!-- Menu de navegação -->
             <ul class="ul">
                 <li><a href="index.html" class="nav-link">Início</a></li>
                 <li><a href="Sobre.html" class="nav-link">Sobre</a></li>
                 <li><a href="Atendimento.html" class="nav-link">Atendimento</a></li>
                 <li><a href="Materiais.html" class="nav-link">Materiais</a></li>
             </ul>
+
+            <!-- Ícones de redes sociais -->
             <div class="social-icons">
                 <a href="https://www.instagram.com/Nutricionistacustoias" target="_blank">
                     <img src="img/insta.png" alt="Instagram" class="social-icon">
@@ -60,6 +52,7 @@
         </div>
     </header>
 
+
     <section class="carousel">
         <div class="carousel-container">
             <img src="img/slide1.jpg" alt="Imagem 1" class="carousel-image">
@@ -74,7 +67,7 @@
             potencialidade. Na Comunidade Dynami, buscamos essa energia e a transformamos em um caminho para seu
             potencial máximo.</p>
         <p>Quer fazer parte dessa comunidade, clique no botão e saiba mais!</p>
-        <a href="Atendimento.html" class="btn-comunidade">Conexão Dynami</a>
+        <a href="Atendimento.html" class="btn-comunidade"><img src="img/Dynamisombra.png" alt="Logo" class="logo"></a>
     </section>
 
     <section class="Especialidades">
@@ -186,7 +179,6 @@
     </script>
 
     <!-- Script carrossel avaliações -->
-    <!-- Script carrossel avaliações -->
     <script>
         let avaliacaoIndex = 0;
         const avaliacoes = document.querySelectorAll('.avaliacao');
@@ -202,20 +194,35 @@
         setInterval(showNextAvaliacao, 5000); // Muda a avaliação a cada 5 segundos
     </script>
 
+    <!-- Script menu hamburguer -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.querySelector('.ul');
 
-    <footer>
-        <div class="footer-container">
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
+</body>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-images">
             <img src="img/LOGO.png" alt="Logo" class="footer-logo">
-            <div class="footer-info">
-                <p><a
-                        href="https://wa.me/5511994702521?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20do%20atendimento.">Whatsapp:
-                        (11) 99470-2551</a></p>
-                <p><a href="https://mail.google.com/mail/u/2/#inbox?compose=new">Email:
-                        nutricionistacustoias@gmail.com</a></p>
-                <p>Todos os direitos reservados &copy; 2024</p>
-            </div>
+            <img src="img/Dynami.png" alt="Dynami" class="footer-dynami">
         </div>
-    </footer>
+        <div class="footer-info">
+            <p class="footer-contact"><a
+                    href="https://wa.me/5511994702521?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20do%20atendimento.">Whatsapp:
+                    (11) 99470-2551</a></p>
+            <p class="footer-contact"><a href="https://mail.google.com/mail/u/2/#inbox?compose=new">Email:
+                    nutricionistacustoias@gmail.com</a></p>
+            <p>Todos os direitos reservados &copy; 2024</p>
+        </div>
+    </div>
+</footer>
+
+
 </body>
 
 </html>
