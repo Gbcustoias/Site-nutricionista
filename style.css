@@ -136,7 +136,7 @@ header {
     /* Alinha verticalmente o conteúdo (imagem e texto) */
     justify-content: center;
     /* Centraliza horizontalmente o conteúdo */
-    padding: 5px 60px;
+    padding: 5px 25px;
     /* Mantendo o padding para o tamanho do botão */
     color: #000;
     background-color: #fdb917;
