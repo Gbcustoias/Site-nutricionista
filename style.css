@@ -130,22 +130,39 @@ header {
 
 /* Botão "Comunidade Dynami" */
 .btn-comunidade {
-    display: inline-block;
-    padding: 20px 40px;
-    font-size: 25px;
+    display: inline-flex;
+    /* Usar flexbox para controlar o layout interno */
+    align-items: center;
+    /* Alinha verticalmente o conteúdo (imagem e texto) */
+    justify-content: center;
+    /* Centraliza horizontalmente o conteúdo */
+    padding: 5px 60px;
+    /* Mantendo o padding para o tamanho do botão */
     color: #000;
     background-color: #fdb917;
     border: 1px solid #d5731e;
     border-radius: 10px;
     transition: background-color 0.3s;
     text-align: center;
-    margin-top: 20px;
 }
 
 .btn-comunidade:hover {
     background-color: #d5731e;
     color: #fff;
 }
+
+.btn-comunidade img {
+    width: 300px;
+    /* Ajuste o tamanho da imagem conforme o necessário */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    margin-right: 10px;
+    /* Espaço entre a imagem e o texto */
+    vertical-align: middle;
+    /* Alinha a imagem verticalmente no meio */
+}
+
+
 
 /* Seção de Especialidades */
 .especialidades {
@@ -197,6 +214,27 @@ h2 {
     padding: 0 1px;
 }
 
+.avaliacoes-carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.avaliacao {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+    text-align: center;
+}
+
+.avaliacao.active {
+    display: block;
+}
+
+.avaliacao:not(.active) {
+    display: none;
+}
+
 /* Estilos do rodapé */
 footer {
     background-color: #f0f0f0;
@@ -206,17 +244,37 @@ footer {
 
 .footer-container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     max-width: 1400px;
     margin: 0 auto;
 }
 
+/* Estilos da logo */
 .footer-logo {
     width: 75px;
     height: auto;
 }
 
+/* Estilos da imagem Dynami */
+.footer-dynami {
+    width: 150px;
+    height: auto;
+    margin: 0 auto;
+    /* Isso vai centralizar a imagem Dynami */
+}
+
+/* Ajuste da estrutura das imagens */
+.footer-images {
+    display: flex;
+    justify-content: flex-start;
+    /* A logo ficará à esquerda */
+    flex-grow: 1;
+    /* Garante que o espaço ao redor das imagens se distribua */
+    align-items: center;
+}
+
+/* Estilos das informações do footer */
 .footer-info {
     text-align: right;
     font-size: 12px;
@@ -539,4 +597,331 @@ p {
 
 .right {
     order: 1;
+}
+
+/*MENU RESPONSIVO CELULAR */
+/* Estilos para o menu hamburguer */
+.menu-toggle {
+    display: none;
+    /* Inicialmente o ícone do menu hamburguer não será exibido em telas grandes (pois será mostrado em telas pequenas) */
+    flex-direction: column;
+    /* Define as barras do hambúrguer na vertical */
+    cursor: pointer;
+    /* Aparece como um ponteiro, indicando que é clicável */
+    width: 30px;
+    /* Largura do botão de hamburguer */
+    height: 25px;
+    /* Altura do botão de hamburguer */
+    justify-content: space-between;
+    /* Deixa as barras do hambúrguer com espaçamento entre elas */
+    z-index: 10;
+    /* Garante que o ícone do hamburguer fique sobre o conteúdo */
+    margin-left: auto;
+    /* Alinha o ícone do hambúrguer à direita do header */
+}
+
+/* Estilo das barras do hamburguer */
+.bar {
+    width: 30px;
+    /* Largura das barras */
+    height: 4px;
+    /* Altura das barras */
+    background-color: #d5731e;
+    /* Cor das barras */
+    border-radius: 2px;
+    /* Deixa as barras com bordas arredondadas */
+    transition: background-color 0.4s, transform 0.3s;
+    /* Transição suave para cor e movimento */
+}
+
+/* Efeito quando passa o mouse sobre as barras */
+.menu-toggle:hover .bar {
+    background-color: #fdb917;
+    /* Muda a cor das barras ao passar o mouse */
+}
+
+/* Estilos para telas grandes (desktop e tablet em modo paisagem) */
+@media (min-width: 769px) {
+    .ul {
+        display: flex;
+        /* Exibe o menu de navegação na horizontal em telas grandes */
+    }
+
+    .menu-toggle {
+        display: none;
+        /* Esconde o ícone de hamburguer em telas grandes */
+    }
+
+    /* Exibe os ícones sociais em telas grandes */
+    .social-icons {
+        display: flex;
+        /* Mostra os ícones de redes sociais na versão desktop */
+    }
+}
+
+/* Estilos para telas pequenas (celulares, até 768px) */
+@media (max-width: 768px) {
+
+    /* Inicialmente, o menu de navegação será oculto */
+    .ul {
+        display: none;
+        /* Esconde o menu de navegação */
+        flex-direction: column;
+        /* Exibe as opções do menu em coluna */
+        width: 100%;
+        /* O menu ocupa toda a largura da tela */
+        background-color: #f0f0f0;
+        /* Cor de fundo do menu */
+        padding: 25px 0;
+        /* Espaçamento vertical no menu */
+        z-index: 5;
+        /* Coloca o menu acima de outros conteúdos */
+        position: absolute;
+        top: 60px;
+        /* Define a posição do menu 60px abaixo do cabeçalho */
+        left: 0;
+        /* Alinha o menu à esquerda da tela */
+        transition: max-height 0.3s ease-in-out;
+        /* Transição suave para o aumento de altura */
+        max-height: 0;
+        /* Inicialmente, o menu estará fechado, sem altura visível */
+        overflow: hidden;
+        /* Esconde qualquer conteúdo que ultrapasse a altura do menu */
+    }
+
+    /* Quando a classe 'active' é adicionada ao menu (ao clicar no hambúrguer), o menu se torna visível */
+    .ul.active {
+        display: flex;
+        /* Exibe o menu como um flexbox */
+        max-height: 500px;
+        /* Define uma altura máxima para o menu quando ele for aberto */
+    }
+
+    /* Estilo para cada item de navegação do menu */
+    .ul li {
+        margin: 10px 0;
+        opacity: 0;
+        /* Começa com opacidade 0 para efeito de animação */
+        animation: slideIn 0.3s forwards;
+        /* Animação para os itens do menu aparecerem */
+    }
+
+    /* Cria um atraso na animação para os itens do menu */
+    .ul li:nth-child(1) {
+        animation-delay: 0.2s;
+        /* Atraso para o primeiro item */
+    }
+
+    .ul li:nth-child(2) {
+        animation-delay: 0.3s;
+        /* Atraso para o segundo item */
+    }
+
+    .ul li:nth-child(3) {
+        animation-delay: 0.4s;
+        /* Atraso para o terceiro item */
+    }
+
+    .ul li:nth-child(4) {
+        animation-delay: 0.5s;
+        /* Atraso para o quarto item */
+    }
+
+    /* Esconde os ícones sociais na versão mobile */
+    .social-icons {
+        display: none;
+        /* Esconde os ícones de redes sociais no mobile */
+    }
+
+    /* Ajuste a logo em dispositivos móveis */
+    .logo {
+        width: 250px;
+        /* Diminui ainda mais a logo em telas menores */
+        z-index: 6;
+        /* Garante que a logo fique sobre o menu */
+    }
+
+    /* Ajustes em outras seções no mobile */
+    .descubra-dynami {
+        padding: 40px;
+        /* Reduz o padding para que a seção fique mais compacta */
+    }
+
+    .descubra-dynami h2 {
+        font-size: 28px;
+        /* Diminui o tamanho da fonte do título */
+    }
+
+    .descubra-dynami p {
+        font-size: 18px;
+        /* Diminui o tamanho da fonte do parágrafo */
+    }
+
+    /* Exibe o ícone do menu hamburguer em telas pequenas */
+    .menu-toggle {
+        display: flex;
+        /* Exibe o hamburguer em telas pequenas */
+        margin-left: auto;
+        /* Alinha o hamburguer à direita */
+    }
+
+    /* Quando o menu estiver aberto, empurra o conteúdo abaixo */
+    .ul.active+.content {
+        padding-top: 100px;
+        /* Ajusta o conteúdo abaixo para ser empurrado para baixo */
+    }
+
+    /* Quando o menu estiver aberto, ele ficará visível 60px abaixo do cabeçalho */
+    .ul.active {
+        top: 60px;
+        /* O menu começa 60px abaixo do cabeçalho */
+    }
+}
+
+/* Animação para o menu deslizante */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        /* O menu começa escondido acima da tela */
+    }
+
+    to {
+        transform: translateY(0);
+        /* O menu desce para sua posição original */
+        opacity: 1;
+        /* Aumenta a opacidade para 1 */
+    }
+}
+
+/* Ajuste do botão "Conexão Dynami" para telas pequenas */
+@media (max-width: 768px) {
+    .btn-comunidade {
+        padding: 5px 30px;
+        /* Reduz o padding para tornar o botão menor */
+        font-size: 14px;
+        /* Diminui o tamanho da fonte */
+        width: auto;
+        /* Deixa a largura automática, ajustando ao conteúdo */
+    }
+
+    .btn-comunidade img {
+        width: 200px;
+        /* Diminui o tamanho da imagem dentro do botão */
+        margin-right: 5px;
+        /* Diminui o espaço entre a imagem e o texto */
+    }
+}
+
+/* Ajuste do rodapé para telas pequenas (celulares) */
+@media (max-width: 768px) {
+
+    /* Esconde os links de WhatsApp e e-mail em telas pequenas */
+    .footer-contact {
+        display: none;
+    }
+
+    /* Ajuste da .footer-container para manter as imagens lado a lado e o texto abaixo delas */
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        /* Alinha os itens em coluna: imagens e texto abaixo */
+        align-items: center;
+        /* Centraliza as imagens e o texto */
+        justify-content: center;
+        text-align: center;
+        /* Garante que o texto fique centralizado */
+    }
+
+    /* Ajuste para as imagens ficarem lado a lado */
+    .footer-images {
+        display: flex;
+        /* Coloca as imagens lado a lado */
+        flex-direction: row;
+        /* Coloca as imagens em linha */
+        align-items: center;
+        /* Alinha as imagens verticalmente */
+        justify-content: center;
+        /* Centraliza as imagens */
+    }
+
+    /* Ajuste da logo e imagem Dynami para ficarem menores */
+    .footer-logo {
+        width: 70px;
+        /* Ajuste o tamanho conforme necessário */
+        height: auto;
+    }
+
+    .footer-dynami {
+        width: 120px;
+        /* Ajuste o tamanho conforme necessário */
+        height: auto;
+        margin: 100 10px;
+        /* Espaçamento entre as imagens */
+    }
+
+    /* Ajuste do texto "Todos os direitos reservados..." abaixo das imagens */
+    .footer-info {
+        font-size: 12px;
+        color: #d5731e;
+        margin-top: 10px;
+        /* Ajuste o espaçamento entre as imagens e o texto */
+        text-align: center;
+    }
+}
+
+/*SOBRE*/
+
+/* Responsividade para telas pequenas (max-width: 768px) */
+@media (max-width: 768px) {
+
+    /* Ajustes para a estrutura geral da página */
+    .container {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    /* Organiza as seções de perfil em coluna */
+    .profile-section {
+        flex-direction: column;
+        /* As seções vão empilhar verticalmente */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .profile-section img {
+        width: 80%;
+        /* As imagens vão ocupar 80% da largura da tela */
+        max-width: 350px;
+        /* Limita o tamanho máximo das imagens */
+        margin-bottom: 20px;
+        /* Adiciona um espaçamento entre a imagem e o texto */
+    }
+
+    .profile-text {
+        width: 80%;
+        /* O texto vai ocupar 80% da largura da tela */
+        font-size: 14px;
+        text-align: center;
+        /* Centraliza o texto */
+    }
+}
+
+/*ATENDIMENTO*/
+/* Ajustando o tamanho do título h2 e do parágrafo dentro do <main> para telas pequenas */
+@media (max-width: 768px) {
+
+    /* Ajustando o tamanho do título h2 */
+    main h2 {
+        font-size: 20px;
+        /* Ajuste o tamanho conforme necessário */
+    }
+
+    /* Ajustando o tamanho do texto nos parágrafos */
+    main p {
+        font-size: 14px;
+        /* Ajuste o tamanho conforme necessário */
+    }
 }
