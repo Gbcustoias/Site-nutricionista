@@ -12,13 +12,25 @@
 <body>
     <header>
         <div class="container">
+            <!-- Logo -->
             <img src="img/LOGOTIPO.png" alt="Logo" class="logo">
+
+            <!-- Ícone do menu hamburguer (aparece apenas em telas pequenas) -->
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <!-- Menu de navegação -->
             <ul class="ul">
                 <li><a href="index.html" class="nav-link">Início</a></li>
                 <li><a href="Sobre.html" class="nav-link">Sobre</a></li>
                 <li><a href="Atendimento.html" class="nav-link">Atendimento</a></li>
                 <li><a href="Materiais.html" class="nav-link">Materiais</a></li>
             </ul>
+
+            <!-- Ícones de redes sociais -->
             <div class="social-icons">
                 <a href="https://www.instagram.com/Nutricionistacustoias" target="_blank">
                     <img src="img/insta.png" alt="Instagram" class="social-icon">
@@ -71,6 +83,8 @@
                     <span class="x">&#10006;</span> Recordatório alimentar<br>
                     <span class="x">&#10006;</span> Montagem do plano alimentar<br>
                     <span class="x">&#10006;</span> Check-up Dynami<br>
+                    <span class="x">&#10006;</span> Acompanhamento duradouro<br>
+                    <span class="x">&#10006;</span> Opção de parcelamento<br>
                     <span class="x">&#10006;</span> Quadro de evolução<br>
                     <span class="x">&#10006;</span> Acompanhamento presencial<br>
                     <span class="x">&#10006;</span> Avaliação Antropométrica<br>
@@ -89,6 +103,8 @@
                     <span class="check">&#10003;</span> Recordatório alimentar<br>
                     <span class="check">&#10003;</span> Montagem do plano alimentar<br>
                     <span class="check">&#10003;</span> Check-up Dynami<br>
+                    <span class="x">&#10006;</span> Acompanhamento duradouro<br>
+                    <span class="x">&#10006;</span> Opção de parcelamento<br>
                     <span class="x">&#10006;</span> Quadro de evolução<br>
                     <span class="x">&#10006;</span> Acompanhamento presencial<br>
                     <span class="x">&#10006;</span> Avaliação Antropométrica<br>
@@ -107,6 +123,8 @@
                     <span class="check">&#10003;</span> Recordatório alimentar<br>
                     <span class="check">&#10003;</span> Montagem do plano alimentar<br>
                     <span class="check">&#10003;</span> Check-up Dynami<br>
+                    <span class="check">&#10003;</span> Acompanhamento duradouro<br>
+                    <span class="check">&#10003;</span> Opção de parcelamento<br>
                     <span class="check">&#10003;</span> Quadro de evolução<br>
                     <span class="x">&#10006;</span> Acompanhamento presencial<br>
                     <span class="x">&#10006;</span> Avaliação Antropométrica<br>
@@ -125,6 +143,8 @@
                     <span class="check">&#10003;</span> Recordatório alimentar<br>
                     <span class="check">&#10003;</span> Montagem do plano alimentar<br>
                     <span class="check">&#10003;</span> Check-up Dynami<br>
+                    <span class="check">&#10003;</span> Acompanhamento duradouro<br>
+                    <span class="check">&#10003;</span> Opção de parcelamento<br>
                     <span class="check">&#10003;</span> Quadro de evolução<br>
                     <span class="check">&#10003;</span> Acompanhamento presencial<br>
                     <span class="check">&#10003;</span> Avaliação Antropométrica<br>
@@ -181,19 +201,6 @@
         <div class="faq-answer">As formas de pagamento são PIX, crédito e débito.</div>
     </section>
 
-    <footer>
-        <div class="footer-container">
-            <img src="img/LOGO.png" alt="Logo" class="footer-logo">
-            <div class="footer-info">
-                <p><a
-                        href="https://wa.me/5511994702521?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20do%20atendimento.">Whatsapp:
-                        (11) 99470-2551</a></p>
-                <p><a href="https://mail.google.com/mail/u/2/#inbox?compose=new">Email:
-                        nutricionistacustoias@gmail.com</a></p>
-                <p>Todos os direitos reservados &copy; 2024</p>
-            </div>
-        </div>
-    </footer>
 
     <script>
         // Script para controlar a abertura e fechamento das respostas das perguntas
@@ -207,6 +214,31 @@
             });
         });
     </script>
+    <!-- Script menu hamburguer -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.querySelector('.ul');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-images">
+                <img src="img/LOGO.png" alt="Logo" class="footer-logo">
+                <img src="img/Dynami.png" alt="Dynami" class="footer-dynami">
+            </div>
+            <div class="footer-info">
+                <p class="footer-contact"><a
+                        href="https://wa.me/5511994702521?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20do%20atendimento.">Whatsapp:
+                        (11) 99470-2551</a></p>
+                <p class="footer-contact"><a href="https://mail.google.com/mail/u/2/#inbox?compose=new">Email:
+                        nutricionistacustoias@gmail.com</a></p>
+                <p>Todos os direitos reservados &copy; 2024</p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
