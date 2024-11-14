@@ -4,103 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <title>Nutricionista Custoias - Plano Bronze</title>
     <style>
-        /* Reset de estilos básicos */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            text-decoration: none;
-            outline: none;
-        }
-
-        /* Estilos do body */
-        body {
-            background-color: white;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* Estilos do cabeçalho */
-        header {
-            display: flex;
-            align-items: center;
-            background-color: #f0f0f0;
-            padding: 5px 20px;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            width: 100%;
-        }
-
-        .logo {
-            width: 300px;
-            height: auto;
-        }
-
-        /* Estilos do menu de navegação */
-        .ul {
-            list-style-type: none;
-            display: flex;
-            justify-content: center;
-            flex-grow: 1;
-            margin: 0;
-        }
-
-        .ul li {
-            margin: 0 10px;
-        }
-
-        .nav-link {
-            padding: 10px;
-            color: #d5731e;
-            position: relative;
-            text-decoration: none;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 20%;
-            height: 2px;
-            background-color: #fdb917;
-            transform: scaleX(0);
-            transition: transform 0.5s ease;
-        }
-
-        .nav-link:hover {
-            color: #fdb917;
-        }
-
-        .nav-link:hover::after,
-        .nav-link:focus::after {
-            transform: scaleX(1);
-        }
-
-        /* Estilos dos ícones de redes sociais */
-        .social-icons {
-            display: flex;
-            margin-left: auto;
-        }
-
-        .social-icon {
-            width: 35px;
-            height: auto;
-            margin-left: 15px;
-            transition: transform 0.3s;
-        }
-
-        .social-icon:hover {
-            transform: scale(1.1);
-        }
-
         /* Estilos do rodapé */
         footer {
             background-color: #f0f0f0;
@@ -119,6 +26,12 @@
         .footer-logo {
             width: 75px;
             height: auto;
+        }
+
+        .footer-dynami {
+            width: 120px;
+            height: auto;
+            text-align: center;
         }
 
         .footer-info {
@@ -236,12 +149,6 @@
             transition: transform 0.3s ease;
         }
 
-        .seta-btn:hover {
-            transform: scale(1.1);
-            background-color: #d5731e;
-            color: white;
-        }
-
         /* Estilos do investimento */
         .investimento {
             font-size: 30px;
@@ -258,13 +165,25 @@
 <body>
     <header>
         <div class="container">
+            <!-- Logo -->
             <img src="img/LOGOTIPO.png" alt="Logo" class="logo">
+
+            <!-- Ícone do menu hamburguer (aparece apenas em telas pequenas) -->
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <!-- Menu de navegação -->
             <ul class="ul">
                 <li><a href="index.html" class="nav-link">Início</a></li>
                 <li><a href="Sobre.html" class="nav-link">Sobre</a></li>
                 <li><a href="Atendimento.html" class="nav-link">Atendimento</a></li>
                 <li><a href="Materiais.html" class="nav-link">Materiais</a></li>
             </ul>
+
+            <!-- Ícones de redes sociais -->
             <div class="social-icons">
                 <a href="https://www.instagram.com/Nutricionistacustoias" target="_blank">
                     <img src="img/insta.png" alt="Instagram" class="social-icon">
@@ -312,6 +231,10 @@
                             objetivo.</p>
                         <p><span class="x">&#10006;</span> Check-up Dynami</p>
                         <p class="descricao">Check-up semanal visando sua evolução e dificuldades.</p>
+                        <p><span class="x">&#10006;</span> Acompanhamento duradouro</p>
+                        <p class="descricao">O plano tem opção de acompanhamento durante 3 ou 6 meses.</p>
+                        <p><span class="x">&#10006;</span> Opção de parcelamento</p>
+                        <p class="descricao">Parcelamento de acordo com o tempo de acompanhamento.</p>
                         <p><span class="x">&#10006;</span>Quadro de evolução</p>
                         <p class="descricao">Quadro de evolução por imagem e gráficos durante o acompanhamento de 3
                             meses.</p>
@@ -351,6 +274,10 @@
                             objetivo.</p>
                         <p><span class="check">&#10003;</span> Check-up Dynami</p>
                         <p class="descricao">Check-up semanal visando sua evolução e dificuldades.</p>
+                        <p><span class="x">&#10006;</span> Acompanhamento duradouro</p>
+                        <p class="descricao">O plano tem opção de acompanhamento durante 3 ou 6 meses.</p>
+                        <p><span class="x">&#10006;</span> Opção de parcelamento</p>
+                        <p class="descricao">Parcelamento de acordo com o tempo de acompanhamento.</p>
                         <p><span class="x">&#10006;</span>Quadro de evolução</p>
                         <p class="descricao">Quadro de evolução por imagem e gráficos durante o acompanhamento de 3
                             meses.</p>
@@ -390,8 +317,12 @@
                             objetivo.</p>
                         <p><span class="check">&#10003;</span> Check-up Dynami</p>
                         <p class="descricao">Check-up semanal visando sua evolução e dificuldades.</p>
+                        <p><span class="check">&#10003;</span> Acompanhamento duradouro</p>
+                        <p class="descricao">O plano tem opção de acompanhamento durante 3 ou 6 meses.</p>
+                        <p><span class="check">&#10003;</span> Opção de parcelamento</p>
+                        <p class="descricao">Parcelamento de acordo com o tempo de acompanhamento.</p>
                         <p><span class="check">&#10003;</span>Quadro de evolução</p>
-                        <p class="descricao">Quadro de evolução por imagem e gráficos durante o acompanhamento de 3
+                        <p class="descricao">Quadro de evolução por imagem e gráficos durante o acompanhamento de 3 ou 6
                             meses.</p>
                         <p><span class="x">&#10006;</span> Acompanhamento presencial</p>
                         <p class="descricao">Acompanhamento em atendimento presencial, buscando uma maior conectividade
@@ -403,7 +334,9 @@
                         <button class="seta-btn" onclick="mudarPlano('anterior')">&lt;</button>
                         <button class="seta-btn" onclick="mudarPlano('proximo')">&gt;</button>
                     </div>
-                    <h2 class="investimento">Investimento: R$ 699,90 </h2>
+                    <h2 class="investimento">Investimento:</h2>
+                    <h2 class="investimento">3 meses: R$ 699,00</h2>
+                    <h2 class="investimento">6 meses: R$ 1299,00</h2>
                 </div>
                 <div class="plano">
                     <h3>Plano Diamante</h3>
@@ -429,6 +362,10 @@
                             objetivo.</p>
                         <p><span class="check">&#10003;</span> Check-up Dynami</p>
                         <p class="descricao">Check-up semanal visando sua evolução e dificuldades.</p>
+                        <p><span class="check">&#10003;</span> Acompanhamento duradouro</p>
+                        <p class="descricao">O plano tem opção de acompanhamento durante 3 ou 6 meses.</p>
+                        <p><span class="check">&#10003;</span> Opção de parcelamento</p>
+                        <p class="descricao">Parcelamento de até 6 vezes.</p>
                         <p><span class="check">&#10003;</span>Quadro de evolução</p>
                         <p class="descricao">Quadro de evolução por imagem e gráficos durante o acompanhamento de 3
                             meses.</p>
@@ -442,25 +379,13 @@
                         <button class="seta-btn" onclick="mudarPlano('anterior')">&lt;</button>
                         <button class="seta-btn" onclick="mudarPlano('proximo')">&gt;</button>
                     </div>
-                    <h2 class="investimento">Investimento: R$ 959,90 </h2>
+                    <h2 class="investimento">Investimento: </h2>
+                    <h2 class="investimento">3 meses: R$ 949,00</h2>
+                    <h2 class="investimento">6 meses: R$ 1749,00</h2>
                 </div>
             </div>
         </section>
     </main>
-
-    <footer>
-        <div class="footer-container">
-            <img src="img/LOGO.png" alt="Logo" class="footer-logo">
-            <div class="footer-info">
-                <p><a
-                        href="https://wa.me/5511994702521?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20do%20atendimento.">Whatsapp:
-                        (11) 99470-2551</a></p>
-                <p><a href="https://mail.google.com/mail/u/2/#inbox?compose=new">Email:
-                        nutricionistacustoias@gmail.com</a></p>
-                <p>Todos os direitos reservados &copy; 2024</p>
-            </div>
-        </div>
-    </footer>
 
     <script>
         let planoAtivo = 1; // Controlador de qual plano está visível
@@ -484,6 +409,32 @@
             planos[planoAtivo - 1].classList.add('active');
         }
     </script>
+    <!-- Script menu hamburguer -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.querySelector('.ul');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-images">
+                <img src="img/LOGO.png" alt="Logo" class="footer-logo">
+                <img src="img/Dynami.png" alt="Dynami" class="footer-dynami">
+            </div>
+            <div class="footer-info">
+                <p class="footer-contact"><a
+                        href="https://wa.me/5511994702521?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20do%20atendimento.">Whatsapp:
+                        (11) 99470-2551</a></p>
+                <p class="footer-contact"><a href="https://mail.google.com/mail/u/2/#inbox?compose=new">Email:
+                        nutricionistacustoias@gmail.com</a></p>
+                <p>Todos os direitos reservados &copy; 2024</p>
+            </div>
+        </div>
+    </footer>
+
 </body>
 
 </html>
