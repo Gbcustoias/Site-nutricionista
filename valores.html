@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <title>Nutricionista Custoias - Plano Bronze</title>
+    <style>
+        /* Estilos do rodapé */
+        footer {
+            background-color: #f0f0f0;
+            padding: 5px 20px;
+            height: auto;
+        }
+
+        .footer-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            width: 75px;
+            height: auto;
+        }
+
+        .footer-dynami {
+            width: 120px;
+            height: auto;
+            text-align: center;
+        }
+
+        .footer-info {
+            text-align: right;
+            font-size: 12px;
+            color: #d5731e;
+        }
+
+        .footer-info a {
+            color: #d5731e;
+            text-decoration: none;
+            margin-left: 5px;
+        }
+
+        .footer-info p {
+            margin: 2px 0;
+        }
+
+        .footer-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Seção de Planos */
+        .planos {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .planos-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            position: relative;
+            /* Adicionando posição relativa para os botões de seta */
+        }
+
+        .plano {
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            padding: 20px;
+            width: 1000px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: relative;
+            /* Permite posicionamento dos botões de seta dentro do plano */
+            display: none;
+            /* Inicialmente, os planos ficam ocultos */
+        }
+
+        .plano.active {
+            display: block;
+            /* Mostra o plano ativo */
+        }
+
+        .plano h3 {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .plano p {
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .plano img {
+            margin-top: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .check {
+            color: green;
+            margin-right: 5px;
+        }
+
+        .x {
+            color: red !important;
+            margin-right: 5px;
+        }
+
+        .descricao {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        /* Estilos dos botões de seta */
+        .seta-btns {
+            position: absolute;
+            top: 10px;
+            /* Ajustando para a parte superior */
+            left: 0;
+            right: 0;
+            transform: translateY(0);
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .seta-btn {
+            background-color: white;
+            /* Cor ajustada para combinar com o estilo */
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 24px;
+            color: #777;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        /* Estilos do investimento */
+        .investimento {
+            font-size: 30px;
+            /* Maior tamanho para o valor do investimento */
+            font-weight: bold;
+            color: #d5731e;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <!-- Logo -->
+            <img src="img/LOGOTIPO.png" alt="Logo" class="logo">
+
+            <!-- Ícone do menu hamburguer (aparece apenas em telas pequenas) -->
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <!-- Menu de navegação -->
+            <ul class="ul">
+                <li><a href="/" class="nav-link">Início</a></li>
+                <li><a href="sobre" class="nav-link">Sobre</a></li>
+                <li><a href="atendimento" class="nav-link">Atendimento</a></li>
+                <li><a href="materiais" class="nav-link">Materiais</a></li>
+            </ul>
+
+            <!-- Ícones de redes sociais -->
+            <div class="social-icons">
+                <a href="https://www.instagram.com/Nutricionistacustoias" target="_blank">
+                    <img src="img/insta.png" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://www.linkedin.com/in/giovani-boldrini-custoias" target="_blank">
+                    <img src="img/linkedin.png" alt="LinkedIn" class="social-icon">
+                </a>
+                <a href="https://www.facebook.com/Nutricionistacustoias" target="_blank">
+                    <img src="img/fb.png" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://wa.me/5511994702521?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20do%20atendimento."
+                    target="_blank">
+                    <img src="img/wpp.png" alt="Whatsapp" class="social-icon">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção de Planos -->
+        <section class="planos">
+            <div class="planos-container">
+                <!-- Plano Bronze -->
+                <div class="plano active">
+                    <h3>Plano Bronze</h3>
+                    <img src="img/Bronze.png" alt="Plano Bronze">
+                    <div class="plano-info">
+                        <p><span class="check">&#10003;</span> Questionário nutricional</p>
+                        <p class="descricao">Questionário para uma avaliação que busca entender seu histórico, hábitos
+                            alimentares e objetivos.</p>
+                        <p><span class="check">&#10003;</span> Suporte via Whatsapp</p>
+                        <p class="descricao">Acompanhamento contínuo e esclarecimento de dúvidas pelo WhatsApp.</p>
+                        <p><span class="check">&#10003;</span> Orientação nutricional</p>
+                        <p class="descricao">Orientação sobre seus hábitos alimentares e quais passos devem feitos para
+                            atingir seu objetivo.</p>
+                        <p><span class="x">&#10006;</span> Anamnese</p>
+                        <p class="descricao">Entrevista detalhada sobre sua saúde e histórico nutricional.</p>
+                        <p><span class="x">&#10006;</span> Recordatório alimentar</p>
+                        <p class="descricao">Ferramenta para monitorar o que você come diariamente.</p>
+                        <p><span class="x">&#10006;</span> Montagem do plano alimentar</p>
+                        <p class="descricao">Elaboração detalhada do seu plano alimentar, montado em conjunto com o
+                            paciente durante a consulta em busca de algo factível e duradouro, para assim chegar em seu
+                            objetivo.</p>
+                        <p><span class="x">&#10006;</span> Check-up Dynami</p>
+                        <p class="descricao">Check-up semanal visando sua evolução e dificuldades.</p>
+                        <p><span class="x">&#10006;</span> Acompanhamento duradouro</p>
+                        <p class="descricao">O plano tem opção de acompanhamento durante 3 meses.</p>
+                        <p><span class="x">&#10006;</span> Opção de parcelamento</p>
+                        <p class="descricao">Parcelamento de acordo com o tempo de acompanhamento.</p>
+                        <p><span class="x">&#10006;</span> Avaliação metabólica</p>
+                        <p class="descricao">Questionário para medir sua saúde metabolica e física.</p>
+                        <p><span class="x">&#10006;</span>Material auxiliar</p>
+                        <p class="descricao">Materiais de suporte para auxiliar nos objetivos.</p>
+                        <p><span class="x">&#10006;</span>Quadro de evolução</p>
+                        <p class="descricao">Quadro de evolução por imagem e gráficos durante o acompanhamento de 3
+                            meses.</p>
+                            
+                            
+                        
+                        
+                    </div>
+                    <div class="seta-btns">
+                        <button class="seta-btn" onclick="mudarPlano('anterior')">&lt;</button>
+                        <button class="seta-btn" onclick="mudarPlano('proximo')">&gt;</button>
+                    </div>
+                    <h2 class="investimento">Investimento: R$ 99,99 </h2>
+                </div>
+                <div class="plano">
+                    <h3>Plano Prata</h3>
+                    <img src="img/Prata.png" alt="Plano Prata">
+                    <div class="plano-info">
+                        <p><span class="check">&#10003;</span> Questionário nutricional</p>
+                        <p class="descricao">Questionário para uma avaliação que busca entender seu histórico, hábitos
+                            alimentares e objetivos.</p>
+                        <p><span class="check">&#10003;</span> Suporte via Whatsapp</p>
+                        <p class="descricao">Acompanhamento contínuo e esclarecimento de dúvidas pelo WhatsApp.</p>
+                        <p><span class="check">&#10003;</span> Orientação nutricional</p>
+                        <p class="descricao">Orientação sobre seus hábitos alimentares e quais passos devem feitos para
+                            atingir seu objetivo.</p>
+                        <p><span class="check">&#10003;</span> Anamnese</p>
+                        <p class="descricao">Entrevista detalhada sobre sua saúde e histórico nutricional.</p>
+                        <p><span class="check">&#10003;</span> Recordatório alimentar</p>
+                        <p class="descricao">Ferramenta para monitorar o que você come diariamente.</p>
+                        <p><span class="check">&#10003;</span> Montagem do plano alimentar</p>
+                        <p class="descricao">Elaboração detalhada do seu plano alimentar, montado em conjunto com o
+                            paciente durante a consulta em busca de algo factível e duradouro, para assim chegar em seu
+                            objetivo.</p>
+                        <p><span class="x">&#10006;</span> Check-up Dynami</p>
+                        <p class="descricao">Check-up semanal visando sua evolução e dificuldades.</p>
+                        <p><span class="x">&#10006;</span> Acompanhamento duradouro</p>
+                        <p class="descricao">O plano tem opção de acompanhamento durante 3 meses.</p>
+                        <p><span class="x">&#10006;</span> Opção de parcelamento</p>
+                        <p class="descricao">Parcelamento de acordo com o tempo de acompanhamento.</p>
+                        <p><span class="x">&#10006;</span> Avaliação metabólica</p>
+                        <p class="descricao">Questionário para medir sua saúde metabolica e física.</p>
+                        <p><span class="x">&#10006;</span>Material auxiliar</p>
+                        <p class="descricao">Materiais de suporte para auxiliar nos objetivos.</p>
+                        <p><span class="x">&#10006;</span>Quadro de evolução</p>
+                        <p class="descricao">Quadro de evolução por imagem e gráficos durante o acompanhamento de 3
+                            meses.</p>
+                    </div>
+                    <div class="seta-btns">
+                        <button class="seta-btn" onclick="mudarPlano('anterior')">&lt;</button>
+                        <button class="seta-btn" onclick="mudarPlano('proximo')">&gt;</button>
+                    </div>
+                    <h2 class="investimento">Investimento: R$ 249,99 </h2>
+                </div>
+                <div class="plano">
+                    <h3>Plano Ouro</h3>
+                    <img src="img/Ouro.png" alt="Plano Ouro">
+                    <div class="plano-info">
+                        <p><span class="check">&#10003;</span> Questionário nutricional</p>
+                        <p class="descricao">Questionário para uma avaliação que busca entender seu histórico, hábitos
+                            alimentares e objetivos.</p>
+                        <p><span class="check">&#10003;</span> Suporte via Whatsapp</p>
+                        <p class="descricao">Acompanhamento contínuo e esclarecimento de dúvidas pelo WhatsApp.</p>
+                        <p><span class="check">&#10003;</span> Orientação nutricional</p>
+                        <p class="descricao">Orientação sobre seus hábitos alimentares e quais passos devem feitos para
+                            atingir seu objetivo.</p>
+                        <p><span class="check">&#10003;</span> Anamnese</p>
+                        <p class="descricao">Entrevista detalhada sobre sua saúde e histórico nutricional.</p>
+                        <p><span class="check">&#10003;</span> Recordatório alimentar</p>
+                        <p class="descricao">Ferramenta para monitorar o que você come diariamente.</p>
+                        <p><span class="check">&#10003;</span> Montagem do plano alimentar</p>
+                        <p class="descricao">Elaboração detalhada do seu plano alimentar, montado em conjunto com o
+                            paciente durante a consulta em busca de algo factível e duradouro, para assim chegar em seu
+                            objetivo.</p>
+                        <p><span class="check">&#10003;</span> Check-up Dynami</p>
+                        <p class="descricao">Check-up semanal visando sua evolução e dificuldades.</p>
+                        <p><span class="check">&#10003;</span> Acompanhamento duradouro</p>
+                        <p class="descricao">O plano tem opção de acompanhamento durante 3 meses.</p>
+                        <p><span class="check">&#10003;</span> Opção de parcelamento</p>
+                        <p class="descricao">Parcelamento de acordo com o tempo de acompanhamento.</p>
+                        <p><span class="x">&#10006;</span> Avaliação metabólica</p>
+                        <p class="descricao">Questionário para medir sua saúde metabolica e física.</p>
+                        <p><span class="x">&#10006;</span>Material auxiliar</p>
+                        <p class="descricao">Materiais de suporte para auxiliar nos objetivos.</p>
+                        <p><span class="x">&#10006;</span>Quadro de evolução</p>
+                        <p class="descricao">Quadro de evolução por imagem e gráficos durante o acompanhamento de 3
+                            meses.</p>
+                    </div>
+                    <div class="seta-btns">
+                        <button class="seta-btn" onclick="mudarPlano('anterior')">&lt;</button>
+                        <button class="seta-btn" onclick="mudarPlano('proximo')">&gt;</button>
+                    </div>
+                    <h2 class="investimento">Investimento:</h2>
+                    <h2 class="investimento">R$ 699,99</h2>
+                    
+                </div>
+                <div class="plano">
+                    <h3>Plano Diamante</h3>
+                    <img src="img/Dima.png" alt="Plano Diamante">
+                    <div class="plano-info">
+                        <p><span class="check">&#10003;</span> Questionário nutricional</p>
+                        <p class="descricao">Questionário para uma avaliação que busca entender seu histórico, hábitos
+                            alimentares e objetivos.</p>
+                        <p><span class="check">&#10003;</span> Suporte via Whatsapp</p>
+                        <p class="descricao">Acompanhamento contínuo e esclarecimento de dúvidas pelo WhatsApp.</p>
+                        <p><span class="check">&#10003;</span> Orientação nutricional</p>
+                        <p class="descricao">Orientação sobre seus hábitos alimentares e quais passos devem feitos para
+                            atingir seu objetivo.</p>
+                        <p><span class="check">&#10003;</span> Anamnese</p>
+                        <p class="descricao">Entrevista detalhada sobre sua saúde e histórico nutricional.</p>
+                        <p><span class="check">&#10003;</span> Recordatório alimentar</p>
+                        <p class="descricao">Ferramenta para monitorar o que você come diariamente.</p>
+                        <p><span class="check">&#10003;</span> Montagem do plano alimentar</p>
+                        <p class="descricao">Elaboração detalhada do seu plano alimentar, montado em conjunto com o
+                            paciente durante a consulta em busca de algo factível e duradouro, para assim chegar em seu
+                            objetivo.</p>
+                        <p><span class="check">&#10003;</span> Check-up Dynami</p>
+                        <p class="descricao">Check-up semanal visando sua evolução e dificuldades.</p>
+                        <p><span class="check">&#10003;</span> Acompanhamento duradouro</p>
+                        <p class="descricao">O plano tem opção de acompanhamento durante 3 meses.</p>
+                        <p><span class="check">&#10003;</span> Opção de parcelamento</p>
+                        <p class="descricao">Parcelamento de acordo com o tempo de acompanhamento.</p>
+                        <p><span class="check">&#10003;</span> Avaliação metabólica</p>
+                        <p class="descricao">Questionário para medir sua saúde metabolica e física.</p>
+                        <p><span class="check">&#10003;</span>Material auxiliar</p>
+                        <p class="descricao">Materiais de suporte para auxiliar nos objetivos.</p>
+                        <p><span class="check">&#10003;</span>Quadro de evolução</p>
+                        <p class="descricao">Quadro de evolução por imagem e gráficos durante o acompanhamento de 3
+                            meses.</p>
+                    </div>
+                    <div class="seta-btns">
+                        <button class="seta-btn" onclick="mudarPlano('anterior')">&lt;</button>
+                        <button class="seta-btn" onclick="mudarPlano('proximo')">&gt;</button>
+                    </div>
+                    <h2 class="investimento">Investimento: </h2>
+                    <h2 class="investimento">R$ 849,99</h2>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        let planoAtivo = 1; // Controlador de qual plano está visível
+
+        // Função para mudar o plano
+        function mudarPlano(direcao) {
+            const planos = document.querySelectorAll('.plano');
+            const totalPlanos = planos.length;
+
+            // Ocultar o plano atual
+            planos[planoAtivo - 1].classList.remove('active');
+
+            // Alterar o plano ativo com base na direção
+            if (direcao === 'proximo') {
+                planoAtivo = (planoAtivo < totalPlanos) ? planoAtivo + 1 : 1;
+            } else if (direcao === 'anterior') {
+                planoAtivo = (planoAtivo > 1) ? planoAtivo - 1 : totalPlanos;
+            }
+
+            // Exibir o novo plano ativo
+            planos[planoAtivo - 1].classList.add('active');
+        }
+    </script>
+    <!-- Script menu hamburguer -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.querySelector('.ul');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-images">
+                <img src="img/LOGO.png" alt="Logo" class="footer-logo">
+                <img src="img/Dynami.png" alt="Dynami" class="footer-dynami">
+            </div>
+            <div class="footer-info">
+                <p class="footer-contact"><a
+                        href="https://wa.me/5511994702521?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20do%20atendimento.">Whatsapp:
+                        (11) 99470-2551</a></p>
+                <p class="footer-contact"><a href="https://mail.google.com/mail/u/2/#inbox?compose=new">Email:
+                        nutricionistacustoias@gmail.com</a></p>
+                <p>Todos os direitos reservados &copy; 2024</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

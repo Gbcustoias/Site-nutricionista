@@ -6,12 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="icon" href="img/LOGO.png" type="image/png">
-
+    <link rel="icon" href="img/logo.png" type="image/png">
     <title>Nutricionista Custoias</title>
-    <style>
-        /* Adicione seu CSS aqui */
-    </style>
 </head>
 
 <body>
@@ -29,10 +25,10 @@
 
             <!-- Menu de navegação -->
             <ul class="ul">
-                <li><a href="index.html" class="nav-link">Início</a></li>
-                <li><a href="Sobre.html" class="nav-link">Sobre</a></li>
-                <li><a href="Atendimento.html" class="nav-link">Atendimento</a></li>
-                <li><a href="Materiais.html" class="nav-link">Materiais</a></li>
+                <li><a href="/" class="nav-link">Início</a></li>
+                <li><a href="sobre" class="nav-link">Sobre</a></li>
+                <li><a href="atendimento" class="nav-link">Atendimento</a></li>
+                <li><a href="materiais" class="nav-link">Materiais</a></li>
             </ul>
 
             <!-- Ícones de redes sociais -->
@@ -77,6 +73,8 @@
             <h2>Especialidades atendidas</h2>
             <div class="video-wrapper">
                 <div class="video-container">
+                    <!-- Imagem de fallback para telas pequenas -->
+                    <img src="img/NutriçãoEsportiva.png" alt="Nutrição Esportiva" class="video-fallback">
                     <!-- Vídeo para telas grandes -->
                     <video class="video" muted preload="auto">
                         <source src="img/Esportiva.mp4" type="video/mp4">
@@ -87,6 +85,8 @@
                 </div>
     
                 <div class="video-container">
+                    <!-- Imagem de fallback para telas pequenas -->
+                    <img src="img/NutricaoClinica.png" alt="Nutrição Clínica" class="video-fallback">
                     <!-- Vídeo para telas grandes -->
                     <video class="video" muted preload="auto">
                         <source src="img/Clinica.mp4" type="video/mp4">
@@ -97,7 +97,9 @@
                 </div>
     
                 <div class="video-container">
-
+                    <!-- Imagem de fallback para telas pequenas -->
+                    <img src="img/NutricaoComportamental.png" alt="Nutrição Comportamental" class="video-fallback">
+                    <!-- Vídeo para telas grandes -->
                     <video class="video" muted preload="auto">
                         <source src="img/Comportamental.mp4" type="video/mp4">
                         Seu navegador não suporta o elemento de vídeo.
@@ -108,6 +110,7 @@
             </div>
         </div>
     </section>
+    
 
     <section class="avaliacoes">
         <h2>Avaliações de Pacientes</h2>
@@ -144,7 +147,9 @@
                 <div class="estrelas">⭐⭐⭐⭐⭐</div>
             </div>
         </div>
+        <p><a href="https://g.page/r/CTcsNXbR92ulEAI/review" target="_blank" class="avaliar-link">Avalie você também!</a></p>
     </section>
+    
 
     <!-- Script especialidades atendidas -->
     <script>

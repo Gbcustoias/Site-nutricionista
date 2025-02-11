@@ -515,6 +515,11 @@ p {
     padding: 5px 0;
 }
 
+.whatsapp {
+    color: #d5731e;
+}
+
+
 .arrow {
     margin-left: 10px;
     transform: rotate(0deg);
@@ -923,5 +928,29 @@ p {
     main p {
         font-size: 14px;
         /* Ajuste o tamanho conforme necessário */
+    }
+}
+
+/* Exibe as imagens como fallback para telas pequenas */
+@media (max-width: 768px) {
+    .video-container video {
+        display: none; /* Esconde os vídeos */
+    }
+    .video-container img {
+        display: block; /* Exibe as imagens em vez dos vídeos */
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Exibe os vídeos para telas grandes */
+@media (min-width: 769px) {
+    .video-container img {
+        display: none; /* Esconde as imagens */
+    }
+    .video-container video {
+        display: block; /* Exibe os vídeos em vez das imagens */
+        width: 100%;
+        height: auto;
     }
 }
