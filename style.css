@@ -138,7 +138,7 @@ header {
     /* Centraliza horizontalmente o conteúdo */
     padding: 5px 25px;
     /* Mantendo o padding para o tamanho do botão */
-    color: #000;
+    color: #000000;
     background-color: #fdb917;
     border: 1px solid #d5731e;
     border-radius: 10px;
@@ -239,6 +239,7 @@ h2 {
 display: flex;
     flex-direction: column;
     align-items: center;
+     color: #
 }
 
 
@@ -961,4 +962,5 @@ p {
         height: auto;
     }
 }
+
 
