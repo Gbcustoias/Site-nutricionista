@@ -1,53 +1,81 @@
+# 🌐 Website Profissional Responsivo
 
-# 🌱 Site Profissional – Giovani Boldrini Custoias | Nutricionista
+Website desenvolvido para apresentação profissional, divulgação de serviços e disponibilização de canais de contato para clientes e visitantes.
 
-Este é o site profissional de Giovani Boldrini Custoias, criado para apresentar o trabalho como nutricionista, explicar como funciona o atendimento e facilitar o contato para agendamento de consultas.
+O projeto foi criado como aplicação prática de conceitos de desenvolvimento web utilizando HTML, CSS e JavaScript, com publicação através do GitHub Pages.
 
 ---
 
-## 🧑‍⚕️ Sobre o Site
+## 🎯 Objetivo
 
-O objetivo do site é apresentar o perfil profissional do nutricionista, detalhar a abordagem dos atendimentos e disponibilizar canais de contato para novos pacientes.
+Desenvolver uma presença digital profissional com foco em comunicação clara, experiência do usuário e acessibilidade, reunindo informações institucionais e canais de contato em uma única plataforma.
 
 ---
 
 ## ✨ Funcionalidades
 
-- **Apresentação do Nutricionista:**  
-  Informações sobre formação, experiência e áreas de atuação.
+### 👤 Apresentação Profissional
 
-- **Como funciona o atendimento:**  
-  Explicação sobre o processo de consulta, acompanhamento e diferenciais do serviço.
+- Informações sobre formação e experiência
+- Apresentação dos serviços oferecidos
+- Destaque para diferenciais profissionais
 
-- **Contato facilitado:**  
-  Botão direto para WhatsApp para agendamento de consultas.
+### 📋 Informações sobre Atendimento
 
-- **Redes sociais:**  
-  Links para Instagram, LinkedIn e outras redes relevantes.
+- Explicação do processo de consulta
+- Descrição do acompanhamento realizado
+- Orientações para novos clientes
 
----
+### 📱 Contato Direto
 
-## 🛠️ Tecnologias Utilizadas
+- Integração com WhatsApp
+- Facilidade para agendamento
+- Acesso rápido aos canais de comunicação
 
-- **HTML**
-- **CSS**
-- **JavaScript**
+### 🌐 Redes Sociais
 
----
-
-## 🌐 Acesso ao Site
-
-O site está hospedado via GitHub Pages e pode ser acessado em:  
-[https://nutricionistacustoias.com.br](https://nutricionistacustoias.com.br)
+- Integração com redes profissionais
+- Divulgação da presença digital
 
 ---
 
-## 📞 Como agendar uma consulta
+## 🏗️ Arquitetura
 
-Para agendar uma consulta, basta clicar no botão de WhatsApp disponível no site ou acessar os demais canais de contato.
+```text
+HTML (Estrutura)
+       ↓
+CSS (Estilização)
+       ↓
+JavaScript (Interatividade)
+       ↓
+GitHub Pages (Hospedagem)
+```
+### 🛠️ Tecnologias Utilizadas
+HTML5
+CSS3
+JavaScript
+GitHub Pages
 
----
+### 💡 Competências Demonstradas
+Desenvolvimento Web Front-End
+HTML Semântico
+CSS Responsivo
+JavaScript
+Estruturação de Interfaces
+Experiência do Usuário (UX)
+Hospedagem de Aplicações Estáticas
+Versionamento com Git e GitHub
 
-## 📄 Licença
+### 🌐 Acesso
 
-Este projeto é de uso pessoal e livre para visualização.
+Acesse o projeto online:
+
+https://nutricionistacustoias.com.br
+
+▶️ Como Executar Localmente
+Clone o repositório
+Abra o arquivo index.html
+Execute em qualquer navegador moderno
+📚 Aprendizados
+
+Este projeto permitiu aplicar conceitos fundamentais de desenvolvimento web, estruturação de páginas responsivas, organização de conteúdo institucional e publicação de aplicações estáticas utilizando GitHub Pages.
